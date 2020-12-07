@@ -280,8 +280,8 @@ public class IafWorldRegistry {
     }
 
 
-    public static boolean isFarEnoughFromDangerousGen(IWorld world, BlockPos pos) {
-        /*boolean canGen = true;
+    public static boolean isFarEnoughFromDangerousGen(IServerWorld world, BlockPos pos) {
+        boolean canGen = true;
         IafWorldData data = IafWorldData.get(world.getWorld());
         if (data != null) {
             BlockPos last = data.lastGeneratedDangerousStructure;
@@ -290,8 +290,8 @@ public class IafWorldRegistry {
                 data.setLastGeneratedDangerousStructure(pos);
             }
         }
-        return canGen;*/
-        return true;
+        return canGen;
+        //return true;
     }
 
     public static HashMap<String, Boolean> LOADED_FEATURES;

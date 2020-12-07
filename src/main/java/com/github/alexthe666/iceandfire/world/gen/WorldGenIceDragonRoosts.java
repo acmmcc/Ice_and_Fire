@@ -64,10 +64,14 @@ public class WorldGenIceDragonRoosts extends Feature<NoFeatureConfig> {
 
     @Override
     public boolean func_241855_a(ISeedReader worldIn, ChunkGenerator p_230362_3_, Random rand, BlockPos position, NoFeatureConfig p_230362_6_) {
+        // return false to disable ice dragons until they are fixed
+
+        if(true) { return false; }
+
         if (!IafWorldRegistry.isDimensionListedForDragons(worldIn)) {
             return false;
         }
-        if (!IafConfig.generateDragonRoosts || rand.nextInt(IafConfig.generateDragonRoostChance) != 0 || !IafWorldRegistry.isFarEnoughFromSpawn(worldIn, position)) {
+        if(!IafConfig.generateDragonRoosts || rand.nextInt(IafConfig.generateDragonRoostChance) != 0 || !IafWorldRegistry.isFarEnoughFromSpawn(worldIn, position) || !IafWorldRegistry.isFarEnoughFromDangerousGen(worldIn, position)){
             return false;
         }
         if (!worldIn.getFluidState(worldIn.getHeight(Heightmap.Type.WORLD_SURFACE_WG, position).down()).isEmpty()) {

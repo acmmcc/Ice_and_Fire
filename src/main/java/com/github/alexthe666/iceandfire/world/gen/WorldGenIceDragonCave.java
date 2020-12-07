@@ -61,6 +61,12 @@ public class WorldGenIceDragonCave extends Feature<NoFeatureConfig> {
 
     @Override
     public boolean func_241855_a(ISeedReader worldIn, ChunkGenerator p_230362_3_, Random rand, BlockPos position, NoFeatureConfig p_230362_6_) {
+
+        // return false until ice dragons are fixed
+        if(true) {
+            return false;
+        }
+
         if(!IafWorldRegistry.isDimensionListedForDragons(worldIn)){
             return false;
         }
